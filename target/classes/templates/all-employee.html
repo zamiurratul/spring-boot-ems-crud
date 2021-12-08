@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
+
+<title>Welcome to EMS</title>
+</head>
+<body>
+	<h1>All Employee</h1>
+	<div>
+		<a th:href="@{/index}">Home</a>
+	</div>
+	<div>
+		<table>
+			<tr>
+				<td>Employee Id</td>
+				<td>Full Name</td>
+				<td>Designation</td>
+				<td>Email</td>
+				<td>Contact No</td>
+				<td>Joining Date</td>
+			</tr>
+			<tr th:each="emp: ${employees}">
+				<td th:text="${emp.getEmployeeId()}"></td>
+				<td th:text="${emp.getFullName()}"></td>
+				<td th:text="${emp.getDesignation()}"></td>
+				<td th:text="${emp.getEmail()}"></td>
+				<td th:text="${emp.getContactNo()}"></td>
+				<td th:text="${emp.getJoiningDate()}"></td>
+			</tr>
+		</table>
+	</div>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+</body>
+</html>

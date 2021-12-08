@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
+
+<title>Create New Employee</title>
+</head>
+<body>
+	<div class="containermy-3">
+		<h2>Employee Registration</h2>
+		<form th:action="@{/save}" th:object="${employee}" method="post">
+			<div class="form-row">
+				<div class="col-md-6 form-group">
+					<label>Employee Id</label> <input type="number"
+						class="form-control" th:field="*{employeeId}">
+				</div>
+				<div class="col-md-6 form-group">
+					<label>Fullname</label> <input type="text" class="form-control"
+						th:field="*{fullName}">
+				</div>
+				<div class="col-md-6 form-group">
+					<label>Designation</label> <input type="text" class="form-control"
+						th:field="*{designation}">
+				</div>
+				<div class="col-md-6 form-group">
+					<label>Email</label> <input type="email" class="form-control"
+						th:field="*{email}">
+				</div>
+				<div class="col-md-6 form-group">
+					<label>Contact No</label> <input type="text" class="form-control"
+						th:field="*{contactNo}">
+				</div>
+				<div class="col-md-6 form-group">
+					<label>Joining Date</label> <input type="text" class="form-control"
+						placeholder="yyyy-MM-dd" id="join_datepicker"
+						th:field="*{joiningDate}">
+				</div>
+			</div>
+			<button type="submit" class="btn btn-primary btn-block mt-3">Save</button>
+		</form>
+	</div>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script>
+		$(function() {
+			$("#join_datepicker").datepicker({
+				dateFormat : "yy-mm-dd"
+			});
+			$("#retire_datepicker").datepicker({
+				dateFormat : "yy-mm-dd"
+			});
+		});
+	</script>
+</body>
+</html>
